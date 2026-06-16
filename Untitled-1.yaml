@@ -1,0 +1,14 @@
+
+npm install prisma @types/better-sqlite3 -D
+  
+npm install @prisma/client @prisma/adapter-better-sqlite3 dotenv
+
+npx prisma init --datasource-provider sqlite --output ../generated/prisma
+
+npx prisma migrate dev --name init
+
+npx prisma generate
+
+npx tsx seed/main.ts  
+
+
